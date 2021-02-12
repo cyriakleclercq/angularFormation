@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { User } from '../Iuser';
 
 @Component({
   selector: 'app-enfant',
@@ -7,11 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class EnfantComponent implements OnInit {
 
-  @Input() tableau: [];
+  @Input() tableau: [User];
+  @Output() newUser = new EventEmitter<User>()
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  addEnfant = () => {
+    this.newUser.emit({ name: "jeanne", age: 45 });
+  }
 }

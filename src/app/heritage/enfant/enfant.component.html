@@ -1,5 +1,13 @@
-<p>enfant works!</p>
-
 <div *ngFor="let user of tableau">
-    {{ user.name }}
+
+    <div *ngIf="user.name">
+        {{ user.name }}
+    </div>
+
+    <div *ngIf="!user.name">
+        {{ user }}
+
+    </div>
+
+    <button (click)="addEnfant()"> créer </button>
 </div>
