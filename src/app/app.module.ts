@@ -12,6 +12,8 @@ import { ParentComponent } from './heritage/parent/parent.component';
 import { EnfantComponent } from './heritage/enfant/enfant.component';
 import { AffichageComponent } from './exoHeritage/affichage/affichage.component';
 import { FormulaireComponent } from './exoHeritage/formulaire/formulaire.component';
+import { ErrorComponent } from './error/error.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { FormulaireComponent } from './exoHeritage/formulaire/formulaire.compone
     EnfantComponent,
     AffichageComponent,
     FormulaireComponent,
+    ErrorComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
