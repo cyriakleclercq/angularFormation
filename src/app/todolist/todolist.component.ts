@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 import { Task } from './Itask';
 
 @Component({
@@ -10,7 +11,9 @@ export class TodolistComponent implements OnInit {
 
   tab: Task[] = [{ id: Date.now(), task: 'vaisselle', state: true, update: false }];
 
-  constructor() { }
+  messageService: string;
+
+  constructor(private service: UserService) { }
 
   add(task: HTMLInputElement) {
     if (task.value !== '') {
@@ -31,8 +34,19 @@ export class TodolistComponent implements OnInit {
     todo.state === true ? todo.state = false : todo.state = true;
   }
 
+  getMessage = () => {
+    this.messageService = this.service.getMessageService();
+  }
+
+  getPost = () => {
+    return this.service.getPost();
+  }
 
   ngOnInit() {
+    this.getMessage();
+    console.log(this.messageService);
+
+    this.getPost();
   }
 
 }
