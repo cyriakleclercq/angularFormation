@@ -1,0 +1,45 @@
+<h1> ca marche </h1>
+
+<!-- interpolation -->
+<p> son nom est : {{ nom }}</p>
+
+<p *ngFor="let user of users">
+    nom : {{ user.name }},
+    age: {{ user.age }} ans
+    <button (click)="hello(user.name)"> v </button>
+</p>
+
+<!-- property binding -->
+<div id="img">
+    <img [src]="img" alt="image de chat">
+</div>
+
+<!-- event binding -->
+
+<button (click)="hello()"> v </button>
+
+<!-- two-way data binding -->
+{{ message}}
+<div>
+    <!-- premiere méthode -->
+    <input type="text" [value]="message" (input)="message = $event.target.value">
+
+</div>
+<div>
+    <!-- deuxieme méthode -->
+    <input type="text" [ngModel]="message" (ngModelChange)="message = $event">
+
+</div>
+
+<div>
+    <!-- troisième méthode -->
+    <input type="text" [(ngModel)]="message">
+</div>
+
+<!-- les pipes -->
+<p> {{message | uppercase}}</p>
+<p> {{ nombre | number:'1.1-2' }}</p>
+<p> {{ pourcent | percent }}</p>
+<p> {{ date | date }}</p>
+<p> {{ date | date:'shortTime' }}</p>
+<p> {{ user | json}}</p>

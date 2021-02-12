@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row border">
+        <div class="col-sm-6 border"> à faire </div>
+        <div class="col-sm-6 border"> fait </div>
+    </div>
+
+    <div class="row border" *ngFor="let todo of tab">
+        <div class="col-sm-6 border">
+
+            <div *ngIf="todo.update === true">
+                <input type="text" [(ngModel)]="todo.task" (keydown.enter)="update(todo)">
+            </div>
+
+            <div *ngIf="todo.update === false">
+
+                <ng-template [ngIf]="todo.state === false">
+                    {{ todo.task }}
+                    <button class="btn btn-danger" (click)="delete(todo.id)"> x </button>
+                    <button class="btn btn-info" (click)="update(todo)"> update </button>
+                    <button class="btn btn-success" (click)="check(todo)"> fait </button>
+                </ng-template>
+            </div>
+
+        </div>
+
+        <div class="col-sm-6 border">
+            <ng-template [ngIf]="todo.state === true">
+                {{ todo.task }}
+                <button class="btn btn-danger" (click)="delete(todo.id)"> x </button>
+                <button class="btn btn-warning" (click)="check(todo)"> à refaire </button>
+
+            </ng-template>
+
+        </div>
+    </div>
+</div>
+
+<div class="flex">
+    <input class="form-control bt" type="text" placeholder="entrez une tache" #task (keydown.enter)="add(task)">
+</div>
