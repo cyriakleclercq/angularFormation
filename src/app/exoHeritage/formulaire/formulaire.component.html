@@ -1,0 +1,13 @@
+<form (ngSubmit)="envoie()" [formGroup]="userForm">
+    <label>
+        <input type="text" placeholder="entrez un nom" formControlName="nom">
+    </label>
+    <label>
+        <input type="text" placeholder="entrez un prénom" formControlName="prenom">
+    </label>
+    <label>
+        <input type="text" placeholder="entrez un age" formControlName="age">
+    </label>
+
+    <button type="submit"> envoyer </button>
+</form>

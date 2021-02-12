@@ -1,0 +1,16 @@
+<div *ngFor="let user of users">
+    <ul>
+        <li>
+            nom : {{ user.nom}}
+        </li>
+        <li>
+            prenom : {{ user.prenom}}
+        </li>
+        <li>
+            age : {{ user.age}}
+        </li>
+    </ul>
+
+</div>
+
+<app-formulaire (newUser)="add($event)"></app-formulaire>

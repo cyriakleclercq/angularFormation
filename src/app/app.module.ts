@@ -10,6 +10,8 @@ import { FormulaireDeBaseComponent } from './formulaire-de-base/formulaire-de-ba
 import { FormulaireDynamiqueComponent } from './formulaire-dynamique/formulaire-dynamique.component';
 import { ParentComponent } from './heritage/parent/parent.component';
 import { EnfantComponent } from './heritage/enfant/enfant.component';
+import { AffichageComponent } from './exoHeritage/affichage/affichage.component';
+import { FormulaireComponent } from './exoHeritage/formulaire/formulaire.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { EnfantComponent } from './heritage/enfant/enfant.component';
     FormulaireDynamiqueComponent,
     ParentComponent,
     EnfantComponent,
+    AffichageComponent,
+    FormulaireComponent,
   ],
   imports: [
     BrowserModule,
