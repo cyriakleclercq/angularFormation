@@ -5,11 +5,13 @@ import { AffichageComponent } from './exoHeritage/affichage/affichage.component'
 import { FormulaireDeBaseComponent } from './formulaire-de-base/formulaire-de-base.component';
 import { FormulaireDynamiqueComponent } from './formulaire-dynamique/formulaire-dynamique.component';
 import { TodolistComponent } from './todolist/todolist.component';
+import { PersonneComponent } from './personne/personne.component';
 
 
 const routes: Routes = [
   { path: "", component: TodolistComponent },
   { path: "heritage", component: AffichageComponent },
+  { path: "personne", component: PersonneComponent },
   {
     path: "formulaire", component: FormulaireDeBaseComponent, children: [
       { path: "dynamique", component: FormulaireDynamiqueComponent }
